@@ -52,6 +52,14 @@ public class StoreOrderTest {
     }
 
     @Test(priority = 3)
+    public void testInventory(){
+        Response response=StoreOrderEndPoints.readInventory();
+        response.then().log().all();
+
+        Assert.assertEquals(response.getStatusCode(),200);
+    }
+
+    @Test(priority = 4)
     public void testDeleteOrder(){
         Response response=StoreOrderEndPoints.deleteOrder(orderId);
         response.then().log().all();

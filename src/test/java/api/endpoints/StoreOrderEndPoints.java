@@ -48,4 +48,13 @@ public class StoreOrderEndPoints {
         return response;
     }
 
+    public static Response readInventory(){
+        String get_inventory_url= getURl().getString("get_inventory_url");
+        Response response=given()
+                .when()
+                .get(get_inventory_url);
+
+        return response;
+    }
+
 }
